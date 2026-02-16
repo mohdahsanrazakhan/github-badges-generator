@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Generate custom GitHub badges instantly with our free online badge generator. Create shields.io compatible Markdown and HTML code for your README in seconds.">
+    <title>Free GitHub Badge Generator - Create Markdown & HTML Badges</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-[Inter]">
+    <nav class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+
+                <div class="flex items-center justify-center gap-3 group cursor-pointer">
+                    <div
+                        class="bg-blue-600 p-2 rounded-xl shadow-lg shadow-blue-200 group-hover:rotate-12 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-black text-gray-900 leading-none tracking-tight uppercase">GitHub
+                            <span class="text-blue-600">Badges</span></span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Generator</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/mohdahsanrazakhan/github-badges-generator" target="_blank"
+                        class="hover:opacity-80 transition-opacity">
+                        <img alt="GitHub Repo stars"
+                            src="https://img.shields.io/github/stars/mohdahsanrazakhan/github-badges-generator?style=social">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-6xl mx-auto p-4 md:p-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <aside class="space-y-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+
+                <div class="space-y-3">
+                    <label class="block text-sm font-bold text-gray-700">Badge Style</label>
+                    <div class="grid grid-cols-2 gap-2" id="styleBtnContainer">
+                        <button onclick="updateStyle('for-the-badge', this)"
+                            class="style-btn col-span-2 p-3 border rounded-xl bg-blue-600 text-white shadow-md transition-all flex justify-between items-center group">
+                            <span class="text-xs font-bold">For the Badge</span>
+                            <span class="text-[10px] opacity-70 group-hover:opacity-100">DEFAULT</span>
+                        </button>
+
+                        <button onclick="updateStyle('flat', this)"
+                            class="style-btn p-2.5 border rounded-xl bg-white text-gray-700 hover:bg-gray-50 transition-all text-xs font-bold text-center">
+                            Flat
+                        </button>
+                        <button onclick="updateStyle('flat-square', this)"
+                            class="style-btn p-2.5 border rounded-xl bg-white text-gray-700 hover:bg-gray-50 transition-all text-xs font-bold text-center">
+                            Flat Square
+                        </button>
+                        <button onclick="updateStyle('plastic', this)"
+                            class="style-btn p-2.5 border rounded-xl bg-white text-gray-700 hover:bg-gray-50 transition-all text-xs font-bold text-center">
+                            Plastic
+                        </button>
+                        <button onclick="updateStyle('social', this)"
+                            class="style-btn p-2.5 border rounded-xl bg-white text-gray-700 hover:bg-gray-50 transition-all text-xs font-bold text-center">
+                            Social
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-gray-700">Badge Color</label>
+                    <div
+                        class="flex items-center gap-3 p-2 bg-gray-50 border border-gray-200 rounded-xl hover:border-blue-300 transition-all group">
+                        <div class="relative w-10 h-10 shrink-0">
+                            <input type="color" id="customColor"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                            <div id="badgeColorPreview"
+                                class="w-full h-full rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 group-hover:scale-110 transition-transform"
+                                style="background-color: #000000;"></div>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase block leading-none">Custom
+                                Hex</span>
+                            <button id="resetColor"
+                                class="text-[11px] text-blue-600 hover:text-blue-800 font-semibold decoration-2 underline-offset-4">
+                                <i class="fas fa-solid fa-arrows-rotate"></i>
+                                Use JSON Default
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 pt-2">
+                    <label class="block text-sm font-bold text-gray-700">Logo Color</label>
+                    <div
+                        class="flex items-center gap-3 p-2 bg-gray-50 border border-gray-200 rounded-xl hover:border-blue-300 transition-all group">
+                        <div class="relative w-10 h-10 shrink-0">
+                            <input type="color" id="logoColorPicker" value="#ffffff"
+                                class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
+                            <div id="logoColorPreview"
+                                class="w-full h-full rounded-full border-2 border-white shadow-sm ring-1 ring-gray-200 group-hover:scale-110 transition-transform"
+                                style="background-color: #ffffff;"></div>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-[10px] text-gray-400 font-bold uppercase block leading-none">Icon
+                                Tint</span>
+                            <button id="resetLogoColor"
+                                class="text-[11px] text-blue-600 hover:text-blue-800 font-semibold decoration-2 underline-offset-4">
+                                <i class="fas fa-solid fa-arrows-rotate"></i>
+                                Reset to White
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-gray-700">Orientation</label>
+                    <div class="grid grid-cols-2 gap-2" id="orientationBtnContainer">
+                        <button onclick="updateOrientation('flex-row', this)"
+                            class="orient-btn p-2 border rounded-lg bg-blue-600 text-white shadow-md text-xs font-bold transition-all">
+                            <i class="fas fa-arrows-alt-h mr-1"></i> Horizontal
+                        </button>
+                        <button onclick="updateOrientation('flex-col', this)"
+                            class="orient-btn p-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 text-xs font-bold transition-all">
+                            <i class="fas fa-arrows-alt-v mr-1"></i> Vertical
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-gray-700">Alignment</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="updateAlignment('start', this)"
+                            class="align-btn p-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 text-xs font-bold transition-all"><i
+                                class="fa-solid fa-align-left"></i> Left</button>
+                        <button onclick="updateAlignment('center', this)"
+                            class="align-btn p-2 border rounded-lg bg-blue-600 text-white shadow-md text-xs font-bold transition-all"><i
+                                class="fa-solid fa-align-center"></i> Center</button>
+                        <button onclick="updateAlignment('end', this)"
+                            class="align-btn p-2 border rounded-lg bg-white text-gray-700 hover:bg-gray-100 text-xs font-bold transition-all"><i
+                                class="fa-solid fa-align-right"></i> Right</button>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-gray-700">Code Format</label>
+                    <div class="flex bg-gray-100 p-1 rounded-xl">
+                        <button onclick="setCodeFormat('markdown')" id="mdBtn"
+                            class="flex-1 py-2 text-xs font-bold rounded-lg bg-white shadow-sm transition-all">Markdown</button>
+                        <button onclick="setCodeFormat('html')" id="htmlBtn"
+                            class="flex-1 py-2 text-xs font-bold rounded-lg transition-all">HTML</button>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t">
+                    <button id="resetAllBtn" onclick="resetAllSettings()"
+                        class="w-full p-3 border border-red-200 bg-red-50 text-red-600 rounded-xl text-xs font-bold hover:bg-red-100 transition-all flex justify-center items-center gap-2">
+                        <i class="fas fa-trash-alt"></i> Reset All Settings
+                    </button>
+                </div>
+
+                <div id="resetModal"
+                    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4 !m-0 transition-all duration-300">
+                    <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 transform transition-all scale-95 opacity-0"
+                        id="modalContent">
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-exclamation-triangle text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Reset Everything?</h3>
+                            <p class="text-gray-500 text-sm mb-6">This will reset all your selected technologies and
+                                custom settings to their default values.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <button onclick="closeResetModal()"
+                                class="flex-1 py-3 px-4 bg-gray-100 text-gray-700 rounded-xl font-bold text-xs hover:bg-gray-200 transition-all">
+                                Cancel
+                            </button>
+                            <button onclick="confirmReset()"
+                                class="flex-1 py-3 px-4 bg-red-600 text-white rounded-xl font-bold text-xs hover:bg-red-700 shadow-lg shadow-red-200 transition-all">
+                                Yes, Reset All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="lg:col-span-2 space-y-6">
+
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 min-h-[200px] flex flex-col items-center justify-center relative overflow-hidden">
+                    <h3 class="absolute top-4 left-4 text-[10px] font-black uppercase tracking-widest text-gray-300">
+                        Live Preview</h3>
+                    <div id="previewArea"
+                        class="w-full h-full flex flex-row flex-wrap gap-3 justify-center items-center transition-all duration-500">
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="mb-4">
+                        <label class="block text-sm font-bold mb-2 text-gray-700">Select Technologies</label>
+                        <div class="relative">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400 text-xs"></i>
+                            <input type="text" id="techSearch" placeholder="Search e.g. Node, React, Python..."
+                                class="w-full pl-9 p-2.5 border rounded-xl bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        </div>
+                    </div>
+                    <div id="techContainer" class="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-1">
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-2xl shadow-xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <span id="codeTitle"
+                            class="text-gray-400 text-[10px] font-black uppercase tracking-widest">Markdown
+                            Output</span>
+                        <button id="copyBtn" onclick="copyToClipboard()"
+                            class="text-white text-xs font-bold bg-blue-600 px-5 py-2 rounded-lg hover:bg-blue-500 active:scale-95 transition-all">
+                            <i class="fas fa-copy mr-2"></i> Copy
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <pre
+                            class="overflow-x-auto"><code id="markdownCode" class="text-blue-300 text-sm font-mono leading-relaxed">Select a technology to generate code...</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="mt-20 bg-[#F8FAFC] border-t border-gray-200 rounded-t-[3rem] rounded-t-[3rem] pt-16 pb-8 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/40 rounded-full blur-3xl -z-10"></div>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-16">
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-600 p-2 rounded-xl shadow-lg shadow-blue-500/30">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-black text-gray-900 leading-none tracking-tight uppercase">GitHub
+                                <span class="text-blue-600">Badges</span></span>
+                            <span class="text-xs text-gray-500 uppercase tracking-widest">Generator</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-xs font-medium">
+                        The ultimate tool to customize and generate high-quality badges for your GitHub repositories.
+                        Clean, fast, and professional.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-gray-200 p-6 rounded-3xl backdrop-blur-sm relative overflow-hidden group shadow-sm">
+                    <div
+                        class="absolute -right-4 -top-4 w-24 h-24 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all">
+                    </div>
+                    <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-4">Developed By</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://github.com/mohdahsanrazakhan.png" alt="Developer"
+                            class="w-14 h-14 rounded-2xl border-2 border-blue-500/50 p-0.5">
+                        <div>
+                            <h4 class="text-lg font-bold">Hey Ahsan</h4>
+                            <a href="https://github.com/mohdahsanrazakhan" target="_blank"
+                                class="text-xs text-gray-400 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                                @mohdahsanrazakhan <i class="fas fa-external-link-alt text-[8px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:items-end gap-6">
+                    <div class="flex gap-3">
+                        <a href="https://github.com/mohdahsanrazakhan" target="_blank"
+                            class="w-11 h-11 bg-white border border-gray-100 flex items-center justify-center rounded-2xl text-gray-700 hover:text-white hover:bg-gray-900 hover:shadow-lg transition-all active:scale-90">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="https://twitter.com/MdAhsanRazaKhan"
+                            class="w-11 h-11 bg-white border border-gray-100 flex items-center justify-center rounded-2xl text-gray-700 hover:text-white hover:bg-[#1DA1F2] hover:shadow-lg transition-all active:scale-90">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohd-ahsan-raza-khan"
+                            class="w-11 h-11 bg-white border border-gray-100 flex items-center justify-center rounded-2xl text-gray-700 hover:text-white hover:bg-[#0A66C2] hover:shadow-lg transition-all active:scale-90">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-xs text-gray-400 font-bold mb-2">QUICK ACCESS</p>
+                        <div
+                            class="flex flex-wrap md:justify-end gap-x-4 gap-y-2 text-xs font-bold uppercase tracking-tighter text-gray-500">
+                            <a href="#" class="hover:text-blue-600 transition-colors">Docs</a>
+                            <a href="https://github.com/mohdahsanrazakhan/github-badges-generator/issues" class="hover:text-blue-600 transition-colors">Bug Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                    Made with <i class="fa-solid fa-mug-hot text-sm"></i> 2026 &copy; All rights reserved
+                </p>
+                <div class="flex items-center gap-6 text-[10px] font-black text-gray-500 uppercase tracking-widest">
+                    <span class="flex items-center gap-1"><span
+                            class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Systems Online</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
