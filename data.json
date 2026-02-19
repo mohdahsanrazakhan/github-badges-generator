@@ -442,10 +442,10 @@
     { "name": "WebRTC", "slug": "webrtc", "color": "333333" },
     { "name": "WordPress", "slug": "wordpress", "color": "21759B" },
     { "name": "Xamarin", "slug": "xamarin", "color": "3498DB" },
-    { "name": "Yarn", "slug": "yarn", "color": "2C8EBB" }
+    { "name": "Yarn", "slug": "yarn", "color": "2C8EBB" },
     { "name": "Zod", "slug": "zod", "color": "3E67B1" },
 
-    { "name": "AMD", "slug": "amd", "color": "000000" }
+    { "name": "AMD", "slug": "amd", "color": "000000" },
     { "name": "Analogue", "slug": "analogue", "color": "1A1A1A" },
     { "name": "Battle.net", "slug": "battle.net", "color": "00AEFF" },
     { "name": "Bevy", "slug": "bevy", "color": "232326" },
