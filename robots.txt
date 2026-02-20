@@ -1,0 +1,4 @@
+User-agent: *
+Allow: https://badges.mohdahsanrazakhan.com
+
+Sitemap: https://badges.mohdahsanrazakhan.com/sitemap.xml
