@@ -1,0 +1,60 @@
+{
+  "faqs": [
+    {
+      "question": "What is GitHub Badges Generator?",
+      "answer": "GitHub Badges Generator is a free online tool that allows developers to create Shields.io style badges for GitHub README files, portfolios, and documentation."
+    },
+    {
+      "question": "What does this badge generator tool do?",
+      "answer": "This tool generates GitHub badges in Markdown and HTML format so developers can easily add technology badges to their README files or websites."
+    },
+    {
+      "question": "Is the GitHub Badges Generator free to use?",
+      "answer": "Yes, this tool is 100% free and allows users to generate unlimited badge codes without any signup."
+    },
+    {
+      "question": "Can I generate multiple badges at the same time?",
+      "answer": "Yes, users can select multiple technologies and generate multiple badges together in a single output."
+    },
+    {
+      "question": "What output formats are supported?",
+      "answer": "The generator supports both Markdown code for GitHub README files and HTML code for websites or blogs."
+    },
+    {
+      "question": "How many technology categories are available?",
+      "answer": "The tool includes more than 40 categories covering programming languages, frameworks, tools, cloud services, and platforms."
+    },
+    {
+      "question": "Can I customize badge colors?",
+      "answer": "Yes, users can customize badge colors and logo colors using HEX values to match their design."
+    },
+    {
+      "question": "Can I change the badge style?",
+      "answer": "Yes, multiple badge styles are supported including for-the-badge, flat, flat-square, plastic, and social."
+    },
+    {
+      "question": "Does the tool provide a live preview?",
+      "answer": "Yes, the tool provides a live preview so users can see how badges will look before copying the code."
+    },
+    {
+      "question": "Is there any limit on generating badges?",
+      "answer": "No, users can generate unlimited badge codes. The tool includes most commonly used technologies."
+    },
+    {
+      "question": "Does the tool use Shields.io?",
+      "answer": "The tool follows the Shields.io badge format which is widely used for GitHub badges."
+    },
+    {
+      "question": "Can I align badges in my README?",
+      "answer": "Yes, the tool supports badge alignment options such as left, center, and right."
+    },
+    {
+      "question": "Can I change badge orientation?",
+      "answer": "Yes, users can switch between horizontal and vertical badge orientation."
+    },
+    {
+      "question": "Do I need coding knowledge to use this tool?",
+      "answer": "No, the tool is beginner friendly. Users simply select technologies and the generator automatically creates the code."
+    }
+  ]
+}
