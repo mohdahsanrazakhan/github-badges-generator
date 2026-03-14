@@ -27,61 +27,38 @@ async function loadTechData() {
 
 // FAQs data fetch
 async function loadFAQs() {
-
     const res = await fetch("faqs.json");
     const data = await res.json();
-
     const container = document.getElementById("faqContainer");
-
     data.faqs.forEach((faq, index) => {
-
         const item = document.createElement("div");
-
         item.className = "border-b border-gray-200 pb-4";
-
         item.innerHTML = `
-        
         <button class="faq-btn w-full flex justify-between items-center text-left py-4 font-medium text-gray-800">
-
             <span>${faq.question}</span>
-
             <span class="faq-icon transition-transform">
                 <i class="fa-solid fa-chevron-down text-sm"></i>
             </span>
-
         </button>
-
         <div class="faq-answer hidden text-sm text-gray-600 pb-4 pr-6">
             ${faq.answer}
-        </div>
-        
+        </div>        
         `;
-
         container.appendChild(item);
     });
-
     initAccordion();
 }
 
 function initAccordion() {
-
     const buttons = document.querySelectorAll(".faq-btn");
-
     buttons.forEach(btn => {
-
         btn.addEventListener("click", () => {
-
             const answer = btn.nextElementSibling;
             const icon = btn.querySelector(".faq-icon");
-
             answer.classList.toggle("hidden");
-
             icon.classList.toggle("rotate-180");
-
         });
-
     });
-
 }
 
 loadFAQs();
