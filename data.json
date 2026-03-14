@@ -235,6 +235,7 @@
     { "name": "Udemy", "slug": "udemy", "color": "A435F0" },
     { "name": "W3Schools", "slug": "w3schools", "color": "04AA6D" },
 
+
     { "name": "Amazon Pay", "slug": "amazon-pay", "color": "ff9900" },
     { "name": "Apple Pay", "slug": "apple-pay", "color": "000000" },
     { "name": "Buy Me a Coffee", "slug": "buy-me-a-coffee", "color": "ffdd00" },
@@ -249,6 +250,7 @@
     { "name": "Samsung Pay", "slug": "samsung-pay", "color": "1428A0" },
     { "name": "Stripe", "slug": "stripe", "color": "5469d4" },
     { "name": "Wise", "slug": "wise", "color": "394e79" },
+
 
     { "name": ".NET", "slug": "dotnet", "color": "5C2D91" },
     { "name": "AdonisJS", "slug": "adonisjs", "color": "220052" },
@@ -445,6 +447,7 @@
     { "name": "Yarn", "slug": "yarn", "color": "2C8EBB" },
     { "name": "Zod", "slug": "zod", "color": "3E67B1" },
 
+
     { "name": "AMD", "slug": "amd", "color": "000000" },
     { "name": "Analogue", "slug": "analogue", "color": "1A1A1A" },
     { "name": "Battle.net", "slug": "battle.net", "color": "00AEFF" },
@@ -469,8 +472,10 @@
     { "name": "Unreal Engine", "slug": "unrealengine", "color": "313131" },
     { "name": "Xbox", "slug": "xbox", "color": "107C10" },
 
+
     { "name": "Google Earth Engine", "slug": "googleearthengine", "color": "4285F4" },
     { "name": "QGIS", "slug": "qgis", "color": "93B023" },
+
 
     { "name": "Apache Groovy", "slug": "apache-groovy", "color": "4298B8" },
     { "name": "AssemblyScript", "slug": "assemblyscript", "color": "000000" },
@@ -530,6 +535,7 @@
     { "name": "YAML", "slug": "yaml", "color": "FFFFFF" },
     { "name": "Zig", "slug": "zig", "color": "F7A41D" },
 
+
     { "name": "3DS", "slug": "3ds", "color": "D12228" },
     { "name": "Gamecube", "slug": "gamecube", "color": "6A5FBB" },
     { "name": "Playstation", "slug": "playstation", "color": "003791" },
@@ -543,8 +549,10 @@
     { "name": "Wii U", "slug": "wii-u", "color": "8B8B8B" },
     { "name": "Xbox", "slug": "xbox", "color": "107C10" },
 
+
     { "name": "Alienware", "slug": "alienware", "color": "541BAE" },
     { "name": "MSI", "slug": "msi", "color": "000000" },
+
 
     { "name": "Alibaba Cloud", "slug": "alibabacloud", "color": "FF6701" },
     { "name": "Asana", "slug": "asana", "color": "F06A6A" },
@@ -574,6 +582,7 @@
     { "name": "Scaleway", "slug": "scaleway", "color": "4F0599" },
     { "name": "Vercel", "slug": "vercel", "color": "000000" },
     { "name": "Vultr", "slug": "vultr", "color": "007BFC" },
+
 
     { "name": "Android Studio", "slug": "android-studio", "color": "3DDC84" },
     { "name": "Arduino IDE", "slug": "arduino", "color": "00979D" },
@@ -616,6 +625,7 @@
     { "name": "Zed", "slug": "zedindustries", "color": "084CCF" },
     { "name": "Zend", "slug": "zend", "color": "FFFFFF" },
 
+
     { "name": "Keras", "slug": "keras", "color": "D00000" },
     { "name": "Matplotlib", "slug": "matplotlib", "color": "FFFFFF" },
     { "name": "mlflow", "slug": "mlflow", "color": "D9EAD3" },
@@ -632,6 +642,7 @@
     { "name": "TensorFlow", "slug": "tensorflow", "color": "FF6F00" },
     { "name": "Ultralytics", "slug": "ultralytics", "color": "111F68" },
 
+
     { "name": "Apple Music", "slug": "apple-music", "color": "9933CC" },
     { "name": "Audacity", "slug": "audacity", "color": "0000CC" },
     { "name": "Deezer", "slug": "deezer", "color": "FEAA2D" },
@@ -643,6 +654,7 @@
     { "name": "Tidal", "slug": "tidal", "color": "00FFFF" },
     { "name": "YouTube Music", "slug": "youtube-music", "color": "FF0000" },
 
+
     { "name": "Google Sheets", "slug": "googlesheets", "color": "34A853" },
     { "name": "LibreOffice", "slug": "libreoffice", "color": "18A303" },
     { "name": "Microsoft", "slug": "microsoft", "color": "0078D4" },
@@ -653,6 +665,7 @@
     { "name": "Microsoft SharePoint", "slug": "microsoft-sharepoint", "color": "0078D4" },
     { "name": "Microsoft Visio", "slug": "microsoft-visio", "color": "3955A3" },
     { "name": "Microsoft Word", "slug": "microsoft-word", "color": "2B579A" },
+
 
     { "name": "Alpine Linux", "slug": "alpine-linux", "color": "0D597F" },
     { "name": "Android", "slug": "android", "color": "3DDC84" },
@@ -698,6 +711,7 @@
     { "name": "Windows XP", "slug": "windowsxp", "color": "003399" },
     { "name": "Zorin OS", "slug": "zorin", "color": "10AAEB" },
 
+
     { "name": "Doctrine", "slug": "doctrine", "color": "326CE5" },
     { "name": "Drizzle", "slug": "drizzle", "color": "000000" },
     { "name": "Hibernate", "slug": "hibernate", "color": "59666C" },
@@ -706,6 +720,7 @@
     { "name": "Sequelize", "slug": "sequelize", "color": "52B0E7" },
     { "name": "SQLAlchemy", "slug": "sqlalchemy", "color": "D71F00" },
     { "name": "TypeORM", "slug": "typeorm", "color": "FE0803" },
+
 
     { "name": "Accessibility", "slug": "accessibility", "color": "0170EA" },
     { "name": "Airbnb", "slug": "airbnb", "color": "FF5A5F" },
@@ -776,8 +791,10 @@
     { "name": "XO", "slug": "xo", "color": "5ED9C7" },
     { "name": "Zigbee", "slug": "zigbee", "color": "EB0443" },
 
+
     { "name": "D-Wave", "slug": "dwavesystems", "color": "008CD7" },
     { "name": "Qiskit", "slug": "qiskit", "color": "6929C4" },
+
 
     { "name": "Baidu", "slug": "baidu", "color": "2932E1" },
     { "name": "Microsoft Bing", "slug": "microsoft-bing", "color": "258FFA" },
@@ -793,6 +810,7 @@
     { "name": "Startpage", "slug": "startpage", "color": "6563FF" },
     { "name": "Yahoo!", "slug": "yahoo", "color": "6001D2" },
 
+
     { "name": "Apache", "slug": "apache", "color": "D42029" },
     { "name": "Apache Airflow", "slug": "apache-airflow", "color": "017CEE" },
     { "name": "Apache Ant", "slug": "apache-ant", "color": "A81C7D" },
@@ -807,6 +825,7 @@
     { "name": "Kemp VLM", "slug": "progress", "color": "FEDD00" },
     { "name": "Traefik Proxy", "slug": "traefikproxy", "color": "00314B" },
 
+    
     { "name": "Airtable", "slug": "airtable", "color": "18BFFF" },
     { "name": "Bluesky", "slug": "bluesky", "color": "0285FF" },
     { "name": "Buy Me a Coffee", "slug": "buy-me-a-coffee", "color": "FFDD00" },
@@ -857,6 +876,7 @@
     { "name": "YouTube", "slug": "youtube", "color": "FF0000" },
     { "name": "Zoom", "slug": "zoom", "color": "2D8CFF" },
 
+
     { "name": "Apple", "slug": "apple", "color": "000000" },
     { "name": "ASUS", "slug": "asus", "color": "000080" },
     { "name": "BlackBerry", "slug": "blackberry", "color": "808080" },
@@ -871,10 +891,12 @@
     { "name": "Vivo", "slug": "vivo", "color": "00BFFF" },
     { "name": "Xiaomi", "slug": "xiaomi", "color": "FF6900" },
 
+
     { "name": "App Store", "slug": "app-store", "color": "0D96F6" },
     { "name": "AppGallery", "slug": "huawei", "color": "C80A2D" },
     { "name": "F-Droid", "slug": "f-droid", "color": "1976D2" },
     { "name": "Shopify", "slug": "shopify", "color": "7AB55C" },
+
 
     { "name": "Amazon Prime", "slug": "amazonprime", "color": "0F79AF" },
     { "name": "Apple TV", "slug": "apple-tv", "color": "000000" },
@@ -894,6 +916,7 @@
     { "name": "Twitch", "slug": "twitch", "color": "9347FF" },
     { "name": "YouTube Gaming", "slug": "youtubegaming", "color": "FF0000" },
 
+
     { "name": "Alacritty", "slug": "alacritty", "color": "F46D01" },
     { "name": "GNOME Terminal", "slug": "gnome-terminal", "color": "FFFFFF" },
     { "name": "Hyper", "slug": "hyper", "color": "000000" },
@@ -903,6 +926,7 @@
     { "name": "tmux", "slug": "tmux", "color": "000000" },
     { "name": "Warp", "slug": "warp", "color": "01A4FF" },
     { "name": "WezTerm", "slug": "wezterm", "color": "4E49EE" },
+
 
     { "name": "Apifox", "slug": "apifox", "color": "FF6600" },
     { "name": "Cypress", "slug": "cypress", "color": "E5E5E5" },
@@ -917,6 +941,7 @@
     { "name": "Testing Library", "slug": "testing-library", "color": "E33332" },
     { "name": "Vitest", "slug": "vitest", "color": "252529" },
 
+
     { "name": "Apache Subversion", "slug": "subversion", "color": "809CC9" },
     { "name": "Bitbucket", "slug": "bitbucket", "color": "0047B3" },
     { "name": "Forgejo", "slug": "forgejo", "color": "FB923C" },
@@ -929,8 +954,10 @@
     { "name": "Mercurial", "slug": "mercurial", "color": "999999" },
     { "name": "Perforce Helix", "slug": "perforce", "color": "00AEEF" },
 
+
     { "name": "Fitbit", "slug": "fitbit", "color": "00B0B9" },
 
+    
     { "name": "AngelList", "slug": "angellist", "color": "D4D4D4" },
     { "name": "Behance", "slug": "behance", "color": "1769FF" },
     { "name": "Freelancer", "slug": "freelancer", "color": "29B2FE" },
