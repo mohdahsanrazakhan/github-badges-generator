@@ -100,22 +100,22 @@ window.updateStyle = function (style, btnElement) {
 window.updateOrientation = function (orient, btnElement) {
     currentOrientation = orient;
     document.querySelectorAll('.orient-btn').forEach(btn => {
-        btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-sm');
+        btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md');
         btn.classList.add('bg-white', 'text-gray-900', 'hover:bg-gray-100');
     });
     btnElement.classList.remove('bg-white', 'text-gray-900', 'hover:bg-gray-100');
-    btnElement.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-sm');
+    btnElement.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md');
     generateBadges();
 };
 
 window.updateAlignment = function (align, btnElement) {
     currentAlign = align;
     document.querySelectorAll('.align-btn').forEach(btn => {
-        btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-sm');
+        btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md');
         btn.classList.add('bg-white', 'text-gray-900', 'hover:bg-gray-100');
     });
     btnElement.classList.remove('bg-white', 'text-gray-900', 'hover:bg-gray-100');
-    btnElement.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-sm');
+    btnElement.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md');
     generateBadges();
 };
 
@@ -183,7 +183,7 @@ window.confirmReset = function () {
 
     // Alignment Buttons
     document.querySelectorAll('.align-btn').forEach(btn => {
-        const isCenter = btn.innerText === 'Center';
+        const isCenter = btn.innerText.includes('Center');
         btn.className = `align-btn p-2 border rounded-lg text-xs font-bold transition-all ${isCenter ? 'bg-blue-600 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-gray-100'}`;
     });
 
