@@ -61,7 +61,9 @@ function initAccordion() {
     });
 }
 
-loadFAQs();
+if (document.getElementById("faqContainer")) {
+    loadFAQs();
+}
 
 function renderTechList(techs) {
     const container = document.getElementById('techContainer');
@@ -258,39 +260,59 @@ function generateBadges() {
     }
 }
 
-// --- UTILS ---
+// --- UTILS (SAFE VERSION) ---
 
-document.getElementById('techSearch').addEventListener('input', (e) => {
-    const term = e.target.value.toLowerCase();
-    const filtered = allTechs.filter(t => t.name.toLowerCase().includes(term));
-    renderTechList(filtered);
-});
+const techSearch = document.getElementById('techSearch');
+
+if (techSearch) {
+    techSearch.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = allTechs.filter(t => t.name.toLowerCase().includes(term));
+        renderTechList(filtered);
+    });
+}
+
+const customColor = document.getElementById('customColor');
+
+if (customColor) {
+    customColor.addEventListener('input', (e) => {
+        useDefaultColor = false;
+        document.getElementById('badgeColorPreview').style.backgroundColor = e.target.value;
+        generateBadges();
+    });
+}
+
+const logoColorPicker = document.getElementById('logoColorPicker');
+
+if (logoColorPicker) {
+    logoColorPicker.addEventListener('input', (e) => {
+        document.getElementById('logoColorPreview').style.backgroundColor = e.target.value;
+        generateBadges();
+    });
+}
+
+const resetColorBtn = document.getElementById('resetColor');
+
+if (resetColorBtn) {
+    resetColorBtn.onclick = () => {
+        useDefaultColor = true;
+        document.getElementById('badgeColorPreview').style.backgroundColor = '#000000';
+        generateBadges();
+    };
+}
+
+const resetLogoColorBtn = document.getElementById('resetLogoColor');
+
+if (resetLogoColorBtn) {
+    resetLogoColorBtn.onclick = () => {
+        document.getElementById('logoColorPicker').value = "#ffffff";
+        document.getElementById('logoColorPreview').style.backgroundColor = '#ffffff';
+        generateBadges();
+    };
+}
 
 // Remove styleSelect listener if you are using Buttons now
 // document.getElementById('styleSelect').addEventListener('change', generateBadges); 
-
-document.getElementById('customColor').addEventListener('input', (e) => {
-    useDefaultColor = false;
-    document.getElementById('badgeColorPreview').style.backgroundColor = e.target.value;
-    generateBadges();
-});
-
-document.getElementById('logoColorPicker').addEventListener('input', (e) => {
-    document.getElementById('logoColorPreview').style.backgroundColor = e.target.value;
-    generateBadges();
-});
-
-document.getElementById('resetColor').onclick = () => {
-    useDefaultColor = true;
-    document.getElementById('badgeColorPreview').style.backgroundColor = '#000000';
-    generateBadges();
-};
-
-document.getElementById('resetLogoColor').onclick = () => {
-    document.getElementById('logoColorPicker').value = "#ffffff";
-    document.getElementById('logoColorPreview').style.backgroundColor = '#ffffff';
-    generateBadges();
-};
 
 window.copyToClipboard = function () {
     const code = document.getElementById('markdownCode').innerText;
@@ -307,4 +329,110 @@ window.copyToClipboard = function () {
     });
 };
 
-loadTechData();
+if (document.getElementById("techContainer")) {
+    loadTechData();
+}
+// ==========================
+// Load Blog Cards Dynamically
+// ==========================
+
+const blogsContainer = document.getElementById("blogs-container");
+
+function getCategoryColor(color) {
+
+    const colors = {
+        blue: "bg-blue-600",
+        red: "bg-red-600",
+        green: "bg-green-600",
+        indigo: "bg-indigo-600",
+        purple: "bg-purple-600",
+        yellow: "bg-yellow-500"
+    };
+
+    return colors[color] || "bg-gray-600";
+}
+
+if (blogsContainer) {
+
+    fetch("../blog-data.json")
+
+        .then(res => res.json())
+
+        .then(blogs => {
+
+            blogsContainer.innerHTML = blogs.map(blog => `
+
+                <article
+                class="group bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 overflow-hidden flex flex-col">
+
+                <div class="relative overflow-hidden h-48 bg-gray-200">
+
+                <img src="${blog.image}"
+                alt="${blog.title}"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+                <span
+                class="absolute top-4 left-4 ${getCategoryColor(blog.categoryColor)} text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">
+
+                ${blog.category}
+
+                </span>
+
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+
+                <div class="flex items-center gap-3 mb-3">
+
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+
+                ${blog.date}
+
+                </span>
+
+                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+
+                ${blog.readTime}
+
+                </span>
+
+                </div>
+
+                <h2 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+
+                ${blog.title}
+
+                </h2>
+
+                <p class="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+
+                ${blog.description}
+
+                </p>
+
+                <div class="mt-auto">
+
+                <a href="/blogs/${blog.slug}.html"
+                class="text-blue-600 text-xs font-black uppercase tracking-widest flex items-center gap-2 group/link">
+
+                Read More
+
+                <i class="fa-solid fa-arrow-right transition-transform group-hover/link:translate-x-1"></i>
+
+                </a>
+
+                </div>
+
+                </div>
+
+                </article>
+
+            `).join("");
+
+        })
+
+        .catch(err => console.error("Blog loading error:", err));
+
+}
