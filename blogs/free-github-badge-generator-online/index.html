@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free GitHub Badge Generator Online - Custom, Dynamic & No Coding</title>
+    <meta name="description"
+        content="Create custom GitHub badges instantly with our free GitHub badge generator. No coding required. Generate dynamic, build status, and README badges online with live preview.">
+
+    <script>
+        tailwind.config = {
+            plugins: [tailwind.typography],
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #readingProgress {
+            height: 3px;
+            background: #2563eb;
+            width: 0%;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            z-index: 45;
+            transition: width 0.1s ease;
+        }
+
+        .anchor-target {
+            scroll-margin-top: 100px;
+        }
+
+        .prose pre {
+            background-color: #0f172a !important;
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .prose ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+
+        /* FAQ Accordion Styling */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+    <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center justify-center gap-3 group cursor-pointer">
+                    <div
+                        class="bg-blue-600 p-2 rounded-xl shadow-lg shadow-blue-200 group-hover:rotate-12 transition-transform duration-300">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm font-black text-gray-900 leading-none tracking-tight uppercase">GitHub
+                            <span class="text-blue-600">Badges</span></span>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Generator</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/mohdahsanrazakhan" target="_blank"
+                        class="hover:opacity-80 transition-opacity">
+                        <img alt="GitHub Repo stars"
+                            src="https://img.shields.io/github/stars/mohdahsanrazakhan/github-badges-generator?style=social">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="readingProgress"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-10 lg:py-16">
+        <nav
+            class="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-10">
+            <a href="/index.html" class="hover:text-blue-600">Home</a>
+            <i class="fas fa-chevron-right text-[8px]"></i>
+            <a href="/blogs/index.html" class="hover:text-blue-600">Blogs</a>
+            <i class="fas fa-chevron-right text-[8px]"></i>
+            <span class="text-gray-900">Post</span>
+        </nav>
+
+        <article class="w-full">
+            <header class="text-center mb-12">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <span
+                        class="bg-blue-50 text-blue-600 text-[10px] font-black uppercase px-3 py-1 rounded-lg">Tools</span>
+                    <span
+                        class="bg-green-50 text-green-600 text-[10px] font-black uppercase px-3 py-1 rounded-lg">Free</span>
+                </div>
+
+                <h2
+                    class="text-3xl md:text-5xl font-black text-gray-900 leading-tight tracking-tight mb-10 max-w-3xl mx-auto">
+                    Free GitHub Badge Generator - <span class="text-blue-600">No Coding</span>, Instant Preview
+                </h2>
+
+                <div id="author-block"
+                    class="inline-flex flex-wrap items-center justify-center gap-6 p-5 bg-white border border-gray-100 rounded-3xl shadow-sm mx-auto">
+                    <div class="flex items-center gap-3 pr-6 border-r border-gray-100 last:border-0">
+                        <img src="https://github.com/mohdahsanrazakhan.png" class="w-10 h-10 rounded-xl shadow-sm"
+                            alt="Author">
+                        <div class="text-left">
+                            <p class="text-sm font-bold text-gray-900 leading-none">Mohd Ahsan</p>
+                            <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest mt-1">Author</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <div
+                            class="flex items-center gap-2 text-[10px] font-bold text-gray-500 uppercase tracking-tighter">
+                            <i class="far fa-calendar-alt text-blue-500"></i>
+                            <span>April 02, 2026</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-[10px] font-bold text-gray-500 uppercase tracking-tighter">
+                            <i class="far fa-clock text-blue-500"></i>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="rounded-[2.5rem] overflow-hidden mb-16 shadow-2xl border border-gray-100 ring-8 ring-white">
+                <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1200"
+                    class="w-full h-auto" alt="GitHub Badges Banner">
+            </div>
+
+            <div class="prose prose-slate prose-lg max-w-3xl mx-auto text-gray-600 leading-relaxed font-medium">
+
+                <p class="text-xl text-gray-800 font-semibold mb-8 italic border-l-4 border-blue-600 pl-6">
+                    If you’ve ever landed on a GitHub repo and instantly trusted it because it looked clean and
+                    well-organized, chances are—you noticed the badges.
+                </p>
+
+                <p>
+                    Those small labels at the top quietly tell you everything: whether the build is passing, how popular
+                    the project is, and how actively it’s maintained.
+                </p>
+
+                <p>
+                    The good news is, you don’t need to be an expert to create them. A GitHub badge generator lets you
+                    build and customize badges instantly without touching complicated code.
+                </p>
+
+                <p>
+                    If you're looking for a free GitHub badge generator online, you're already on the right track.
+                </p>
+
+                <p>
+                    Your GitHub profile is more than just a collection of repositories—it’s your developer identity.
+                    GitHub badges help make that identity stand out professionally.
+                </p>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    What is a GitHub Badge Generator?
+                </h3>
+
+                <p>
+                    A GitHub badge generator is an online tool that helps you create visual badges for your repositories
+                    and README files. These badges display key project information in a compact format.
+                </p>
+
+                <div class="bg-blue-50 p-6 rounded-3xl my-8 border border-blue-100">
+                    <p class="font-bold text-blue-900 mb-2">You can use badges to:</p>
+
+                    <ul class="list-disc pl-5 space-y-2 text-blue-800">
+                        <li>Show build status</li>
+                        <li>Display GitHub stars and forks</li>
+                        <li>Highlight version numbers</li>
+                        <li>Add download counts</li>
+                        <li>Showcase CI/CD status</li>
+                    </ul>
+                </div>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    Why Use a Free GitHub Badge Generator?
+                </h3>
+
+                <p>
+                    Using a simple GitHub badge generator improves your project presentation instantly and saves time.
+                </p>
+
+                <ul>
+                    <li><strong>No Coding Required</strong> — beginners can create professional badges easily</li>
+                    <li><strong>Instant Badge Creation</strong> — generate badges within seconds</li>
+                    <li><strong>Live Preview</strong> — see badge results before copying code</li>
+                    <li><strong>Full Customization</strong> — edit color, text, logos and styles</li>
+                </ul>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    Different Types of Badges You Can Create
+                </h3>
+
+                <p>
+                    Badges aren’t just decorative—they provide meaningful project insights.
+                </p>
+
+                <h4 class="text-lg font-bold mt-6">Dynamic Badges — Always Up to Date</h4>
+
+                <ul>
+                    <li>GitHub stars badge</li>
+                    <li>Repository stats badge</li>
+                    <li>Download count badge</li>
+                </ul>
+
+                <p>
+                    A dynamic GitHub badges generator keeps your README automatically updated without manual edits.
+                </p>
+
+                <h4 class="text-lg font-bold mt-6">Build & CI Badges</h4>
+
+                <ul>
+                    <li>GitHub build status badge</li>
+                    <li>Build passing badge</li>
+                    <li>CI/CD badges</li>
+                </ul>
+
+                <p>
+                    These badges instantly show whether your code is working correctly.
+                </p>
+
+                <h4 class="text-lg font-bold mt-6">Version & Release Badges</h4>
+
+                <ul>
+                    <li>Latest release badge</li>
+                    <li>NPM version badge</li>
+                    <li>Dependency status badge</li>
+                </ul>
+
+                <h4 class="text-lg font-bold mt-6">Custom Badges</h4>
+
+                <ul>
+                    <li>Add custom labels</li>
+                    <li>Match brand colors</li>
+                    <li>Include logos</li>
+                </ul>
+
+                <p>
+                    A custom GitHub badge generator gives full flexibility.
+                </p>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    How to Create a GitHub Badge (Without Overthinking It)
+                </h3>
+
+                <ul>
+                    <li>Open a free GitHub badge generator online</li>
+                    <li>Enter label and message</li>
+                    <li>Select style and color</li>
+                    <li>Copy generated markdown</li>
+                    <li>Paste inside README</li>
+                </ul>
+
+                <p>
+                    Your badge appears instantly.
+                </p>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    Where Badges Make the Biggest Impact
+                </h3>
+
+                <ul>
+                    <li>Your GitHub profile → looks more complete</li>
+                    <li>Open-source projects → builds credibility</li>
+                    <li>Portfolio repositories → adds professionalism</li>
+                    <li>Team projects → shows build status instantly</li>
+                </ul>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    Dynamic vs Static Badges — Which One Should You Use?
+                </h3>
+
+                <div class="overflow-x-auto my-10">
+                    <table
+                        class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-4 font-black text-xs uppercase tracking-widest">Type</th>
+                                <th class="p-4 font-black text-xs uppercase tracking-widest">When to Use</th>
+                                <th class="p-4 font-black text-xs uppercase tracking-widest">Why It Matters</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="p-4 text-sm font-bold">Static</td>
+                                <td class="p-4 text-sm text-gray-500">Fixed info</td>
+                                <td class="p-4 text-sm text-gray-500">Clean and simple</td>
+                            </tr>
+
+                            <tr>
+                                <td class="p-4 text-sm font-bold">Dynamic</td>
+                                <td class="p-4 text-sm text-gray-500">Live updates</td>
+                                <td class="p-4 text-sm text-gray-500">Keeps everything current</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    A Few Things That Can Go Wrong
+                </h3>
+
+                <ul>
+                    <li>Adding too many badges</li>
+                    <li>Using badges without value</li>
+                    <li>Poor placement inside README</li>
+                </ul>
+
+                <p>
+                    Keep your badges meaningful and minimal.
+                </p>
+
+                <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
+                    What Makes a Good Badge Generator?
+                </h3>
+
+                <ul>
+                    <li>Clean interface</li>
+                    <li>Live preview support</li>
+                    <li>Customization options</li>
+                    <li>Fast badge output</li>
+                </ul>
+
+                <p>
+                    A well-structured README creates a strong first impression—and badges help achieve that.
+                </p>
+
+            </div>
+        </article>
+    </main>
+
+    <footer
+        class="mt-20 bg-[#F8FAFC] border-t border-gray-200 rounded-t-[3rem] rounded-t-[3rem] pt-16 pb-8 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/40 rounded-full blur-3xl -z-10"></div>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mb-16">
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-600 p-2 rounded-xl shadow-lg shadow-blue-500/30">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-black text-gray-900 leading-none tracking-tight uppercase">GitHub
+                                <span class="text-blue-600">Badges</span></span>
+                            <span class="text-xs text-gray-500 uppercase tracking-widest">Generator</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-xs font-medium">
+                        The ultimate tool to customize and generate high-quality badges for your GitHub repositories.
+                        Clean, fast, and professional.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white/5 border border-gray-200 p-6 rounded-3xl backdrop-blur-sm relative overflow-hidden group shadow-sm">
+                    <div
+                        class="absolute -right-4 -top-4 w-24 h-24 bg-blue-600/10 rounded-full blur-2xl group-hover:bg-blue-600/20 transition-all">
+                    </div>
+                    <p class="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-4">Developed By</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://github.com/mohdahsanrazakhan.png" alt="Developer"
+                            class="w-14 h-14 rounded-2xl border-2 border-blue-500/50 p-0.5">
+                        <div>
+                            <h4 class="text-lg font-bold">Hey Ahsan</h4>
+                            <a href="https://github.com/mohdahsanrazakhan" target="_blank"
+                                class="text-xs text-gray-400 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                                @mohdahsanrazakhan <i class="fas fa-external-link-alt text-[8px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:items-end gap-6">
+                    <div class="flex gap-3">
+                        <a href="https://github.com/mohdahsanrazakhan" target="_blank"
+                            class="w-11 h-11 bg-white border border-gray-100 flex items-center justify-center rounded-2xl text-gray-700 hover:text-white hover:bg-gray-900 hover:shadow-lg transition-all active:scale-90">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="https://twitter.com/MdAhsanRazaKhan"
+                            class="w-11 h-11 bg-white border border-gray-100 flex items-center justify-center rounded-2xl text-gray-700 hover:text-white hover:bg-[#1DA1F2] hover:shadow-lg transition-all active:scale-90">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohd-ahsan-raza-khan"
+                            class="w-11 h-11 bg-white border border-gray-100 flex items-center justify-center rounded-2xl text-gray-700 hover:text-white hover:bg-[#0A66C2] hover:shadow-lg transition-all active:scale-90">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                    </div>
+                    <div class="text-left md:text-right">
+                        <p class="text-xs text-gray-400 font-bold mb-2">QUICK ACCESS</p>
+                        <div
+                            class="flex flex-wrap md:justify-end gap-x-4 gap-y-2 text-xs font-bold uppercase tracking-tighter text-gray-500">
+                            <a href="/index.html" class="hover:text-blue-600 transition-colors">Home</a>
+                            <a href="/blogs/index.html" class="hover:text-blue-600 transition-colors">Blogs</a>
+                            <a href="https://github.com/mohdahsanrazakhan/github-badges-generator/issues"
+                                class="hover:text-blue-600 transition-colors">Bug Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                    Made with <i class="fa-solid fa-mug-hot text-sm"></i> 2026 &copy; All rights reserved
+                </p>
+                <div class="flex items-center gap-6 text-[10px] font-black text-gray-500 uppercase tracking-widest">
+                    <span class="flex items-center gap-1"><span
+                            class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Systems Online</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("readingProgress").style.width = scrolled + "%";
+        });
+    </script>
+</body>
+
+</html>
