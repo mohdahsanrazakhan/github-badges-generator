@@ -170,12 +170,14 @@
                 </p>
 
                 <p>
-                    The good news is, you don’t need to be an expert to create them. A <a href="https://github.com/" target="_blank">Github</a> badge generator lets you
+                    The good news is, you don’t need to be an expert to create them. A <a href="https://github.com/"
+                        target="_blank">Github</a> badge generator lets you
                     build and customize badges instantly without touching complicated code.
                 </p>
 
                 <p>
-                    If you're looking for a <a href="https://badges.mohdahsanrazakhan.com/" target="_blank">free GitHub badge generator online</a>, you're already on the right track.
+                    If you're looking for a <a href="https://badges.mohdahsanrazakhan.com/" target="_blank">free GitHub
+                        badge generator online</a>, you're already on the right track.
                 </p>
 
                 <p>
@@ -230,7 +232,8 @@
                 </p>
 
                 <ul>
-                    <li><strong>No Coding Required:</strong> With a <a href="https://x.com/MdAhsanRazaKhan" target="_blank">no coding GitHub badge generator</a>, even beginners can
+                    <li><strong>No Coding Required:</strong> With a <a href="https://x.com/MdAhsanRazaKhan"
+                            target="_blank">no coding GitHub badge generator</a>, even beginners can
                         create professional badges in seconds.</li>
                     <li><strong>Instant Badge Creation:</strong>Most tools allow you to create GitHub badges instantly
                         with just a few inputs.</li>
@@ -320,7 +323,8 @@
                     <li>Portfolio repositories - adds professionalism</li>
                     <li>Team projects - shows build status instantly</li>
                 </ul>
-                <p>Even a few well-placed <a href="https://github.com/mohdahsanrazakhan" target="_blank">GitHub repository badges</a> can change how your project is perceived.</p>
+                <p>Even a few well-placed <a href="https://github.com/mohdahsanrazakhan" target="_blank">GitHub
+                        repository badges</a> can change how your project is perceived.</p>
 
                 <h3 class="text-2xl font-black text-gray-900 mt-12 mb-4 anchor-target">
                     Dynamic vs Static Badges — Which One Should You Use?
@@ -387,7 +391,8 @@
                 <p>
                     A well-structured README makes a strong first impression—and badges play a big role in that.
                 </p>
-                <p>With a <a href="https://badges.mohdahsanrazakhan.com/" target="_blank">free GitHub badge generator</a>, you can add clarity, credibility, and a bit of personality to
+                <p>With a <a href="https://badges.mohdahsanrazakhan.com/" target="_blank">free GitHub badge
+                        generator</a>, you can add clarity, credibility, and a bit of personality to
                     your projects without spending extra time.
                 </p>
                 <p>It’s a small detail, but it makes a noticeable difference.
@@ -395,6 +400,7 @@
 
             </div>
         </article>
+        <section id="faq-section" class="max-w-3xl mx-auto mt-16"></section>
     </main>
 
     <footer
@@ -494,6 +500,62 @@
             const scrolled = (winScroll / height) * 100;
             document.getElementById("readingProgress").style.width = scrolled + "%";
         });
+    </script>
+
+    <!-- FAQs Render -->
+    <script>
+        async function loadFAQs() {
+            try {
+                const response = await fetch("/blogs/faqs.json");
+                const faqs = await response.json();
+
+                // detect current page slug
+                let path = window.location.pathname;
+
+                if (path.endsWith("/")) {
+                    path += "index.html";
+                }
+
+                path = path.replace("/blogs/", "");
+
+                const currentFAQs = faqs[path];
+
+                if (!currentFAQs || currentFAQs.length === 0) return;
+
+                const container = document.getElementById("faq-section");
+
+                let html = `
+        <h3 class="text-2xl font-black text-gray-900 mb-6">
+            Frequently Asked Questions
+        </h3>
+        <div class="space-y-4">
+        `;
+
+                currentFAQs.forEach(faq => {
+                    html += `
+            <details class="bg-white border border-gray-100 rounded-2xl shadow-sm p-5 group">
+                <summary class="flex justify-between items-center cursor-pointer font-bold text-gray-900">
+                    ${faq.question}
+                    <i class="fas fa-chevron-down transition-transform"></i>
+                </summary>
+
+                <div class="mt-3 text-gray-600">
+                    ${faq.answer}
+                </div>
+            </details>
+            `;
+                });
+
+                html += `</div>`;
+
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error("FAQ load error:", error);
+            }
+        }
+
+        loadFAQs();
     </script>
 </body>
 
